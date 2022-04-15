@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Loading</title>
+    </head>
+    <body>
+        
+        <!-- Container box for style only -->
+        <div class="container">
+            <!-- Add box example -->
+            <div class="box" style="--box-c:#00ff00;--box-w:565;" data-level="80">
+                <svg>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+                Html
+            </div>
+            <div class="box" style="--box-c:#00f7ff;--box-w:565;" data-level="60">
+                <svg>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+                Css
+            </div>
+            <div class="box" style="--box-c:#ffee00;--box-w:565;" data-level="40">
+                <svg>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                    <circle cx="100" cy="100" r="90"></circle>
+                </svg>
+                Javascript
+            </div>
+        </div>
+
+        <script>
+            let boxs = document.querySelectorAll(".box");
+        
+            // Add effect after 1 secound
+            setTimeout(() => {
+                boxs.forEach(box => {
+                    box.style.setProperty("--box-w",`${565 - ( (565/100) * box.dataset.level)}`);
+                })
+            }, 1000);
+        </script>
+    </body>
+</html>
